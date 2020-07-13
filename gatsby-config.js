@@ -4,7 +4,10 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    siteTitle: `Bankster Blog`,
+    siteTitleAlt: 'Bankster Blog',
+    title: "Bank Criminal List",
+    author: "me",
   },
   plugins: [
     {
@@ -12,6 +15,10 @@ module.exports = {
       // See the theme's README for all available options
       options: {
         navigation: [
+          {
+            title: `Home`,
+            slug: `/`,
+          },
           {
             title: `Blog`,
             slug: `/blog`,
@@ -24,21 +31,27 @@ module.exports = {
         externalLinks: [
           {
             name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
-          },
-          {
-            name: `Instagram`,
-            url: `https://www.instagram.com/lekoarts.de/`,
-          },
+            url: `https://twitter.com/`,
+          }
         ],
       },
     },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/content/pages`,
+      },
+    },
+    /*
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
       },
     },
+    */
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,

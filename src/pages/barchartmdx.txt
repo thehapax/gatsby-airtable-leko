@@ -1,0 +1,20 @@
+---
+title: About
+slug: "/about"
+---
+
+import { Chart } from "react-charts";
+
+### Data represented in BarChart
+<figure style={{ height: 300 }}>
+  <Chart
+    data={mydata}
+    series={{ type: "bar" }}
+    axes={[
+      { primary: true, type: "ordinal", position: "left" },
+      { position: "bottom", type: "linear", stacked: true },
+    ]}
+    tooltip
+  />
+</figure>
+

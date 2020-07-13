@@ -1,0 +1,77 @@
+---
+title: Hero
+date: 2019-08-25
+---
+
+import SimpleArea from "../../../components/SimpleArea";
+import PieRechartComponent from "./pie.rechart";
+import BankList from "./banklist";
+import {Chart} from "react-charts";
+import {ResponsiveContainer} from 'recharts';
+
+# Hello
+Built with  <a href="http://https://www.gatsbyjs.org/"> Gatsby JS </a>. 
+Put Filler text here. or anything you want
+
+---
+
+#### Bank Criminal List (BankList)
+<BankList />
+---
+
+#### Data from SimpleArea (Recharts Library)
+
+<ResponsiveContainer width='100%' aspect={4.0/3.0}>
+  <SimpleArea />
+</ResponsiveContainer>
+
+
+---
+
+#### Data from Pie Chart (Recharts Library)
+<ResponsiveContainer width='100%' aspect={4.0/3.0}>
+  <PieRechartComponent />
+</ResponsiveContainer>
+
+---
+
+#### Data represented in BarChart (react-charts library)
+
+<figure style={{ height: 300 }}>
+  <Chart
+    data={data}
+    series={{ type: "bar" }}
+    axes={[
+      { primary: true, type: "ordinal", position: "left" },
+      { position: "bottom", type: "linear", stacked: true },
+    ]}
+    tooltip
+  />
+</figure>
+
+export const data = [
+  {
+    label: "In App Purchase Income",
+    datums: [
+      { x: "2020", y: 9 },
+      { x: "2019", y: 32 },
+      { x: "2018", y: 35 },
+      { x: "2017", y: 36 },
+      { x: "2016", y: 38 },
+      { x: "2015", y: 30 },
+      { x: "2014", y: 29 },
+    ],
+  },
+  {
+    label: "Advertising Income",
+    datums: [
+      { x: "2020", y: 4 },
+      { x: "2019", y: 3 },
+      { x: "2018", y: 12 },
+      { x: "2017", y: 14 },
+      { x: "2016", y: 10 },
+      { x: "2015", y: 9 },
+      { x: "2014", y: 17 },
+    ],
+  },
+]
